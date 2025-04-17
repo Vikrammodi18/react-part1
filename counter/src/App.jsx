@@ -1,13 +1,18 @@
 import { useState } from "react"
-
+import ButtonSubscribe from "./subscribed"
 function App(){
   // let counter = 13
   let [counter,setCounter] = useState(15)
   function increaseValue(){
-    setCounter(counter=>counter+1)
+    if(counter<20){
+      setCounter(prev=>prev+1)
+
+    }
   }
   function decreaseValue(){
-    setCounter(counter=> counter-1)
+    if(counter>0){
+      setCounter(prev=> prev-1)
+    }
   }
   return (
     <>
@@ -16,7 +21,9 @@ function App(){
     <button onClick={increaseValue}>increase</button>
     <button onClick={decreaseValue}>decrease</button>
     <footer>{counter}</footer>
+    <ButtonSubscribe/>
     </>
+
   )
 }
 

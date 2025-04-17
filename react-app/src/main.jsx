@@ -2,6 +2,7 @@ import React,{StrictMode} from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import Chai from './chai.jsx'
+import isSubscribeButton from '../../counter/src/subscribed.jsx'
 const anotherElement = (
   <a href="https://google.com" target='_blank'> visit to google</a>
 )
