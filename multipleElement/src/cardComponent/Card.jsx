@@ -5,20 +5,16 @@ function Card({val,index}){
     
     return(
         <>
-        <div className="w-64 h-70 rounded-xl px-3 py-1 text-gray-500 mx-4 my-4 shadow-lg">
-        <img className="h-38  rounded w-50 mx-3" src={val.thumbnail}alt="" />
-        <div className="my-4 px-2 py-2">
+    <div  className="w-64 h-70 rounded-xl px-3 py-1 text-gray-500 mx-4 my-4 shadow-lg">
+        <img className="h-38 object-contain rounded-xl w-50 mx-3" src={val.images[0]}alt="" />
+        <div className="px-2 py-1" >
             <h4>{val.title}</h4>
             <p className=""> <b> &#8377; {val.price}</b></p>
             <p className="text-sm">free delivery</p>
-            <button className="bg-gray-800 px-2 rounded text-white cursor-pointer" onClick={()=> setAddToCart (addToCart=> !addToCart)} >{addToCart?"added":"add to cart"} </button>
+            <button className="bg-gray-800 px-2 my-2 rounded text-white cursor-pointer" onClick={()=> setAddToCart (addToCart=> !addToCart)} >{addToCart?"added":"add to cart"} </button>
         </div>
-
     </div>
         </>
-        
-        
-        
     )
 }
 function Cards(){
@@ -38,22 +34,23 @@ function Cards(){
         const fetchData = async ()=>{
            const response = await fetch('https://dummyjson.com/products/search?q=phone')
            const value = await response.json()
+           
            setData(value)
 
         }
           fetchData()
-          console.log(data)
+          
       },[])
       
     return(
-    
-        
-        products.map((val,index)=>
-            <Card val={val} />
-        )
-        
-        
-        
+        <div className='flex flex-wrap justify-center'>
+            {data.products?
+            data.products.map((val,index)=> (
+                <Card val={val} key={index}/>
+            )):<p>loadingg...</p>
+            }
+
+        </div>
     )
 }
 

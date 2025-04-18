@@ -7,10 +7,10 @@ function App() {
 
   return (
     <>
-    <div className='flex flex-wrap' key="key">
+    
      <Cards />
      
-    </div>
+   
     </>
   )
 }
