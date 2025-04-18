@@ -1,5 +1,6 @@
-import Parent from "./Parent"
 
+import Parent from "./Parent"
+import CardComponent from "./CardsTest";
 function Child(){
     let employees = [
         {
@@ -35,7 +36,9 @@ function Child(){
       ];
     return(
         <>
-        <Parent employees={employees}/>
+        {/* <Parent employees={employees}/> */}
+        {/* <Cards employess={employees} /> */}
+        <CardComponent employess={employees} />
         </>
     )
 }
