@@ -5,7 +5,7 @@ import { faRightLong } from '@fortawesome/free-solid-svg-icons'
 
 import { useState } from 'react'
 import { faApple, faGoogle, faInstagramSquare } from '@fortawesome/free-brands-svg-icons'
-import NavBar from '../navbar/NavBar'
+
 
 function Login(){
     const[count,setCount] = useState(0)
@@ -15,7 +15,7 @@ function Login(){
     }
     return (
         <>
-        <NavBar />
+        
         <div className="w-full h-80 flex flex-wrap justify-center content-center">
             <div className="w-3xl h-70 bg-white flex flex-wrap flex-col content-center">
                 <h4 className="p-4 text-center text-2xl font-black text-gray-700">Login to Apple Store</h4>
