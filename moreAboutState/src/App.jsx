@@ -2,6 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import One from './component/One'
+import Two from './component/Two'
 
 function App() {
   const[count,setCount] = useState(0)
@@ -9,7 +11,12 @@ function App() {
   console.log(count)
   return (
     <>
-     <div style={{textAlign:"center"}}>
+
+    <One name="manisha" />
+    <Two name="vikram"/>
+
+
+     {/* <div style={{textAlign:"center"}}>
       <h3>{count}</h3>
       <h4>{name}</h4>
       <button onClick={()=> {
@@ -18,7 +25,8 @@ function App() {
         
         
       }}>clickme</button>
-     </div>
+     </div> */}
+
     </>
   )
 }

@@ -2,14 +2,14 @@ import { useEffect,useState } from "react"
 
 function Card({data}){
     const [addToCart,setAddToCart] = useState(false)
-
+  
     return (
         <>
         
         <div className="w-3xs h-70 shadow-xl px-6 rounded-xl m-10">
             <div className="p-1">
 
-            <img className="h-35 w-full object-cover" src={data.thumbnail} alt="" />
+            <img className="h-35 w-full object-cover" src={data.images[0]} alt="" />
             </div>
             <div>
                 <h4 className="leading-none">{data.title}</h4>
@@ -24,26 +24,26 @@ function Card({data}){
         </>
     )
 }
-function Cards (){
+function Cards ({searchData="phone",setSearchData}){
+
     const[data,setData] = useState([])
+    const productData = async()=>{
+        let url = `https://dummyjson.com/products/search?q=${searchData}`
+        const response = await fetch(url)
+        const product = await response.json()
+        setData(product)
+    }
     useEffect(()=>{
-        const productData = async()=>{
-            const response = await fetch('https://dummyjson.com/products')
-            const product = await response.json()
-            setData(product)
-        }
         productData()
-    },[])
-    console.log(data)
+    },[setSearchData,productData])
+    
     return(
         <>
         <div className="flex flex-wrap">
-        { data.products.map((data)=>
-        <Card data={data} />
-        
-        )}
+       { data.products? (data.products.map((data)=>
+        <Card data={data} key={data.index} />
+        )):<h3 className="text-center my-3">loadingg</h3>}
         </div>
-       
         </>
     )
 }
