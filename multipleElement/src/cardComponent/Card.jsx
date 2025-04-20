@@ -34,9 +34,9 @@ function Cards(){
       const [data,setData] = useState({})
       useEffect(()=>{
         const fetchData = async ()=>{
-           const response = await fetch('https://dummyjson.com/products/search?q=phone')
+           const response = await fetch('https://dummyjson.com/products')
            const value = await response.json()
-           
+            
            setData(value)
 
         }
