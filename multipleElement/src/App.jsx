@@ -6,14 +6,15 @@ import Card from './cards/Cards'
 import NavBar from './navBar/NavBar'
 import Search from './search/Search'
 import Product from './productPage/product'
+import SideBar from './sidebar/Sidebar'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <Product />
-    
+    {/* <Product /> */}
+    <SideBar />
     </>
   )
 }

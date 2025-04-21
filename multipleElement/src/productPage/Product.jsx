@@ -5,7 +5,7 @@ import Search from "../search/Search"
 
 function Product (){
     const [searchData,setSearchData] = useState("")
-
+    
     return(
         <>
         <div className="px-20 py-5">
