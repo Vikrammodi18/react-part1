@@ -22,23 +22,13 @@ function Card({data}){
         </>
     )
 }
-function Cards ({searchData="phone",setSearchData}){
-
-    const[data,setData] = useState([])
-    const productData = async()=>{
-        let url = `https://dummyjson.com/products/search?q=${searchData}`
-        const response = await fetch(url)
-        const product = await response.json()
-        setData(product)
-    }
-    useEffect(()=>{
-        productData()
-    },[setSearchData,productData])
+function Cards ({data}){
+    
     
     return(
         <>
         <div className="flex flex-wrap w-full justify-between">
-       { data.products? (data.products.map((data)=>
+       { data?.products? (data.products.map((data)=>
         <Card data={data} key={data.index} />
         )):<h3 className="text-center my-3">loadingg</h3>}
         </div>

@@ -1,11 +1,25 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Cards from "../cards/Cards"
 import NavBar from "../navBar/NavBar"
 import Search from "../search/Search"
 
 function Product (){
-    const [searchData,setSearchData] = useState("")
+    const [searchData,setSearchData] = useState("phone")
+    console.log(searchData)
+    const[data,setData] = useState()
     
+    const productData = async ()=>{
+        let url = `https://dummyjson.com/products/search?q=${searchData}`
+        
+        const response = await fetch(url)
+        const product = await response.json()
+        
+        setData(product)
+    }
+    useEffect(()=>{
+        productData()
+    },[searchData])
+
     return(
         <>
         <div className="px-20 py-5">
@@ -16,7 +30,7 @@ function Product (){
 
             <Search setSearchData={setSearchData} />
             </div>
-        <Cards searchData={searchData} setSearchData={setSearchData} />
+            <Cards data={data} />
         </div>
         </>
     )

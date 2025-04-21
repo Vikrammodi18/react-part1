@@ -13,8 +13,8 @@ function App() {
 
   return (
     <>
-    {/* <Product /> */}
-    <SideBar />
+    <Product />
+    {/* <SideBar /> */}
     </>
   )
 }
