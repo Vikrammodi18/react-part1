@@ -1,4 +1,4 @@
-import { useEffect,useState } from "react"
+import {useState } from "react"
 
 function Card({data}){
     const [addToCart,setAddToCart] = useState(false)
@@ -15,7 +15,7 @@ function Card({data}){
                 <h5 className="leading-none "> <b>{data.title}</b></h5>
                 <p>Price:{data.price.toLocaleString('en-IN')}</p>
                 <p>free delivery</p>
-                <button className="shadow-lg inset-shadow-2xs shadow-gray-500/40 px-1 py-1 rounded-lg my-1 bg-gray-300 hover:bg-gray-400 duration-200" onClick={()=>{setAddToCart(!addToCart)}}>{addToCart?"added":"add to cart"}</button>
+                <button className="shadow-lg inset-shadow-2xs shadow-gray-500/40 px-2 py-1 rounded-lg my-1 bg-gray-300 hover:bg-gray-400 duration-200" onClick={()=>{setAddToCart(!addToCart)}}>{addToCart?"added":"add to cart"}</button>
  
             </div>
         </div>
