@@ -8,9 +8,16 @@ function Product (){
 
     return(
         <>
-        <NavBar  />
-        <Search setSearchData={setSearchData} />
+        <div className="px-20 py-5">
+            <div className="text-center">
+                <NavBar  />
+            </div>
+            <div className="text-right">
+
+            <Search setSearchData={setSearchData} />
+            </div>
         <Cards searchData={searchData} setSearchData={setSearchData} />
+        </div>
         </>
     )
 }
