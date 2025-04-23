@@ -5,7 +5,6 @@ function SideBar ({data,setCategoryData}){
         setCategoryData(categoryName)
     }
    
-        
     return (
         <>
         <div className="w-3xs h-screen text-center  pl-4 my-2 overflow-auto">

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
-import Cards from "../cards/Cards"
-import NavBar from "../navBar/NavBar"
-import Search from "../search/Search"
 
+import Cards from "../components/Cards.component"
+import NavBar from "../components/NavBar.component"
+import Search from "../components/Search.component"
 function Product (){
     const [searchData,setSearchData] = useState("phone")
     console.log(searchData)

@@ -1,6 +1,7 @@
-import Cards from "../cards/Cards";
-import NavBar from "../navBar/NavBar";
-import SideBar from "../sidebar/Sidebar";
+import Cards from "../components/Cards.component"
+import SideBar from "../components/Sidebar.component"
+import NavBar from "../components/NavBar.component"
+
 import {useState,useEffect} from "react"
 function Categories(){
     const [data,setCategory] = useState()
@@ -25,7 +26,6 @@ function Categories(){
         fetchedData()
     },[])
     useEffect(()=>{
-        
         fetcedCategoryData()
     },[productData])
     return(
