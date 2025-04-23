@@ -1,7 +1,7 @@
 
 function SideBar ({data,setCategoryData}){
     const sendData = (categoryName)=>{
-        
+        console.log(categoryName)
         setCategoryData(categoryName)
     }
    

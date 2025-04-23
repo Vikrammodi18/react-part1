@@ -27,7 +27,7 @@ function Categories(){
     },[])
     useEffect(()=>{
         fetcedCategoryData()
-    },[productData])
+    },[categoryData])
     return(
         <>
         <div className="px-6 py-5 ">
