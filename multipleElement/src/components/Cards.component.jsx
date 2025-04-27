@@ -2,7 +2,44 @@ import {useState } from "react"
 
 function Card({data}){
     const [addToCart,setAddToCart] = useState(false)
-  
+    
+    const payment = async (price)=>{
+        console.log(price)
+        const url = "http://localhost:8080/api/v1/payments/createOrder"
+        const response = await fetch(url,{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({
+                amount:price}),
+            
+        })
+        const orderData = await response.json()
+        let{data:paymentData} = orderData
+        console.log(paymentData)
+        console.log(paymentData.amount)
+        const options = {
+            key: process.env.RAZORPAY_KEY_ID, // Replace with your Razorpay key_id
+            amount:paymentData.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            currency: 'INR',
+            name: 'academyX',
+            description: 'Test Transaction',
+            order_id: paymentData.id, // This is the order_id created in the backend
+            callback_url:"http://localhost:8080/payments/verifyPayment" , // Your success URL
+            prefill: {
+              name: 'vikram kumar modi',
+              email: 'vikram@example.com',
+              contact: '9999999999'
+            },
+            theme: {
+              color: '#808080'
+            },
+          };
+    
+          const rzp = new Razorpay(options);
+          rzp.open();
+ 
+    
+    }
     return (
         <>
         
@@ -15,8 +52,11 @@ function Card({data}){
                 <h5 className="leading-none "> <b>{data.title}</b></h5>
                 <p>Price:{data.price.toLocaleString('en-IN')}</p>
                 <p>free delivery</p>
-                <button className="shadow-lg inset-shadow-2xs shadow-gray-500/40 px-2 py-1 rounded-lg my-1 bg-gray-300 hover:bg-gray-400 duration-200" onClick={()=>{setAddToCart(!addToCart)}}>{addToCart?"added":"add to cart"}</button>
- 
+                <div>
+
+                <button className=" inline-block mx-2 shadow-lg inset-shadow-2xs shadow-gray-500/40 px-2 py-1 rounded-lg my-1 bg-gray-300 hover:bg-gray-400 duration-200" onClick={()=>{setAddToCart(!addToCart)}}>{addToCart?"added":"add to cart"}</button>
+                <button className="shadow-lg inset-shadow-2xs shadow-gray-500/40 px-2 py-1 rounded-lg my-1 bg-blue-600 hover:bg-blue-400 duration-200" onClick={()=>{payment(data.price)}}>buy now</button>
+                </div>
             </div>
         </div>
         </>
