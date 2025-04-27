@@ -1,4 +1,4 @@
-
+import {Link} from "react-router-dom"
 function NavBar(){
 
     return(
@@ -9,9 +9,9 @@ function NavBar(){
             </nav>
             <div>
                 <ul className="flex flex-wrap gap-2 content-center py-2">
-                    <li><a className="hover:text-gray-500" href="#">Home</a></li>
-                    <li><a className="hover:text-gray-500" href="#">Products</a></li>
-                    <li><a className="hover:text-gray-500" href="#">Category</a></li>
+                    <li><Link  className="hover:text-gray-500" to="#">Home</Link></li>
+                    <li><Link className="hover:text-gray-500" to="/">Products</Link></li>
+                    <li><Link className="hover:text-gray-500" to="/category">Category</Link></li>
                     <li><a className="hover:text-gray-500" href="#">Cart</a></li>
                 </ul>
             </div>

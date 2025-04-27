@@ -1,7 +1,11 @@
 import { useState } from 'react'
 
 import './App.css'
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 import Categories from './pages/Categories.page'
 import Product from './pages/Product.page'
@@ -10,8 +14,14 @@ function App() {
 
   return (
     <>
-    {/* <Product /> */}
-    <Categories />
+    <Router>
+      <Routes>
+        <Route path="/" element ={<Product />} />
+        <Route path="/category" element={<Categories />} />
+      </Routes>
+    </Router>
+    
+    
     </>
   )
 }

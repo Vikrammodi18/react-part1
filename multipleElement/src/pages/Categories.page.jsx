@@ -37,7 +37,8 @@ function Categories(){
         </div>
         <div className="flex justify-between" >
             <SideBar data={data} setCategoryData={setCategoryData} />
-            <div className="ml-9">
+            <div className="ml-9 w-4xl ">
+                
             <Cards data={productData}/>
             </div>
         </div>
