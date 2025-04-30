@@ -1,10 +1,11 @@
+require("dotenv").config()
 import {useState } from "react"
 
 function Card({data}){
     const [addToCart,setAddToCart] = useState(false)
     
     const payment = async (price)=>{
-        console.log(price)
+        
         const url = "http://localhost:8080/api/v1/payments/createOrder"
         const response = await fetch(url,{
             method:"POST",
@@ -15,8 +16,8 @@ function Card({data}){
         })
         const orderData = await response.json()
         let{data:paymentData} = orderData
-        console.log(paymentData)
-        console.log(paymentData.amount)
+        // console.log(paymentData)
+        
         const options = {
             key: process.env.RAZORPAY_KEY_ID, // Replace with your Razorpay key_id
             amount:paymentData.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
@@ -34,10 +35,10 @@ function Card({data}){
               color: '#808080'
             },
           };
-    
+          
           const rzp = new Razorpay(options);
           rzp.open();
- 
+    
     
     }
     return (
