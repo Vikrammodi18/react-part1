@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Ratings from "../components/ratings.component"
 import { useParams } from "react-router-dom"
+import NavBar from "../components/NavBar.component";
 
 
 function ProductDetails(){
@@ -19,7 +20,8 @@ function ProductDetails(){
     },[])
     return (
         <>
-        <div className="text-center text-3xl "><h2>produtDetails</h2></div>
+        <NavBar />
+        <div className="text-center text-3xl mt-10 "><h2>produtDetails</h2></div>
         <div className="flex flex-wrap justify-around py-3 rounded-xl shadow-xl">
             <div className="overflow-hidden py-5 my-10">
                 <img className="scale-125" src={productData.thumbnail} alt="" />

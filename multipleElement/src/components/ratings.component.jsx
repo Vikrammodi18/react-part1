@@ -3,7 +3,7 @@ function Rating({val}){
     console.log(val)
     return (
         <>
-        <div className="w-3xs rounded-xl shadow-xl px-3 py-2">
+        <div className="rounded-xl shadow-xl p-8">
             <h4>rating: <span>{val.rating}</span></h4>
             <h4>comment:<span>{val.comment}</span></h4>
             <div><h4> <span>{new Date(val.date).toLocaleString("en-IN",{timeZone:"Asia/Kolkata"})}</span></h4></div>
