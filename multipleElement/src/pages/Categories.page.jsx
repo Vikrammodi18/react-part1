@@ -19,7 +19,7 @@ function Categories(){
         let url = `https://dummyjson.com/products/category/${categoryData}`
         const response = await fetch(url)
         const product = await response.json()
-
+        console.log(product)
         setProductData(product)
     }
     useEffect(()=>{

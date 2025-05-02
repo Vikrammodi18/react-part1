@@ -1,4 +1,4 @@
-require("dotenv").config()
+// require("dotenv").config()
 import {useState } from "react"
 
 function Card({data}){
@@ -19,7 +19,7 @@ function Card({data}){
         // console.log(paymentData)
         
         const options = {
-            key: process.env.RAZORPAY_KEY_ID, // Replace with your Razorpay key_id
+            key: "rzp_test_EhBj4zClwJawsX", // Replace with your Razorpay key_id
             amount:paymentData.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             currency: 'INR',
             name: 'academyX',

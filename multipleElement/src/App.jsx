@@ -9,6 +9,7 @@ import {
 
 import Categories from './pages/Categories.page'
 import Product from './pages/Product.page'
+import ProductDetails from './pages/ProductDetails.page';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element ={<Product />} />
         <Route path="/category" element={<Categories />} />
+        <Route path="/productDetails" element={<ProductDetails/>} />
       </Routes>
     </Router>
     
