@@ -9,14 +9,14 @@ function Categories(){
     const [productData,setProductData] = useState()
     
     const fetchedData = async()=>{
-        let url = 'https://dummyjson.com/products/categories'
+        let url = `${import.meta.env.VITE_API_URL}/products/categories`
         const response = await fetch(url)
         const categories = await response.json() 
         
         setCategory(categories)
     } 
     const fetcedCategoryData = async() =>{
-        let url = `https://dummyjson.com/products/category/${categoryData}`
+        let url = `${import.meta.env.VITE_API_URL}/products/category/${categoryData}`
         const response = await fetch(url)
         const product = await response.json()
         console.log(product)

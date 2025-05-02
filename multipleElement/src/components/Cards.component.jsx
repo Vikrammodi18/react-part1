@@ -49,10 +49,10 @@ function Card({data}){
     return (
         <>
         
-        <div className="w-3xs h-70  inset-shadow-2xs shadow-lg px-5 rounded-xl mx-3 my-3" onClick={()=>{productDetailsPage(data.id)}}>
+        <div className="w-3xs h-70  inset-shadow-2xs shadow-lg px-5 rounded-xl mx-3 my-3 cursor-pointer duration-200 hover:bg-gray-100 transition" onClick={()=>{productDetailsPage(data.id)}}>
             <div className="p-1 text-center object-cover flex justify-center">
 
-            <img className="h-35" src={data.images[0]} alt="" />
+            <img className="h-35 duration-300 transition-transform hover:scale-110" src={data.images[0]} alt="" />
             </div>
             <div className="text-wrap">
                 <h5 className="leading-none "> <b>{data.title}</b></h5>
@@ -60,7 +60,7 @@ function Card({data}){
                 <p>free delivery</p>
                 <div>
 
-                <button className=" inline-block mx-2 shadow-lg inset-shadow-2xs shadow-gray-500/40 px-2 py-1 rounded-lg my-1 bg-gray-300 hover:bg-gray-400 duration-200" onClick={()=>{setAddToCart(!addToCart)}}>{addToCart?"added":"add to cart"}</button>
+                <button className=" inline-block mx-2 shadow-lg inset-shadow-2xs shadow-gray-500/40 px-2 py-1 rounded-lg my-1 bg-gray-300 hover:bg-gray-400 duration-200" onClick={(e)=>{e.stopPropagation();setAddToCart(!addToCart)}}>{addToCart?"added":"add to cart"}</button>
                 <button className="shadow-lg inset-shadow-2xs shadow-gray-500/40 px-2 py-1 rounded-lg my-1 bg-blue-600 hover:bg-blue-400 duration-200" onClick={()=>{}}>buy now</button>
                 </div>
             </div>

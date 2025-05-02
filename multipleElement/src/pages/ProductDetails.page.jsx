@@ -10,9 +10,9 @@ function ProductDetails(){
     const {id} = useParams();
    
     const fetchProductDetails = async ()=>{
-        const response = await fetch(`https://dummyjson.com/products/${id}`)
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/products/${id}`)
         const jsonResponse = await response.json()
-        console.log(jsonResponse)
+       
         setProductData(jsonResponse)
     }
     useEffect(()=>{
