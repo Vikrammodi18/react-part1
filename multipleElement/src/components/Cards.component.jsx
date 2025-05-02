@@ -59,7 +59,7 @@ function Card({data}){
                 <p>Price:{data.price.toLocaleString('en-IN')}</p>
                 <p>free delivery</p>
                 <div>
-
+                
                 <button className=" inline-block mx-2 shadow-lg inset-shadow-2xs shadow-gray-500/40 px-2 py-1 rounded-lg my-1 bg-gray-300 hover:bg-gray-400 duration-200" onClick={(e)=>{e.stopPropagation();setAddToCart(!addToCart)}}>{addToCart?"added":"add to cart"}</button>
                 <button className="shadow-lg inset-shadow-2xs shadow-gray-500/40 px-2 py-1 rounded-lg my-1 bg-blue-600 hover:bg-blue-400 duration-200" onClick={()=>{}}>buy now</button>
                 </div>
