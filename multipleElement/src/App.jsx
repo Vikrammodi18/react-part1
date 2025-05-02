@@ -10,6 +10,7 @@ import {
 import Categories from './pages/Categories.page'
 import Product from './pages/Product.page'
 import ProductDetails from './pages/ProductDetails.page';
+import Rating from './components/ratings.component';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element ={<Product />} />
         <Route path="/category" element={<Categories />} />
         <Route path="/productDetails" element={<ProductDetails/>} />
+        <Route path="/rating" element={<Rating/>} />
       </Routes>
     </Router>
     
